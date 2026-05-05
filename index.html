@@ -13,7 +13,6 @@
             line-height: 1.7;
             color: #333;
         }
-        /* Header Banner */
         header {
             display: flex;
             align-items: center;
@@ -23,27 +22,10 @@
             margin-bottom: 30px;
             flex-wrap: wrap;
         }
-        .logo-title {
-            display: flex;
-            align-items: center;
-            gap: 15px;
-        }
-        .logo-title img {
-            height: 60px;        /* adjust to your logo size */
+        .logo {
+            height: 60px;          /* adjust to your logo size */
             width: auto;
             max-height: 80px;
-        }
-        .site-name {
-            font-size: 1.4rem;
-            font-weight: 600;
-            color: #222;
-            line-height: 1.2;
-        }
-        .site-name small {
-            display: block;
-            font-size: 0.8rem;
-            font-weight: 400;
-            color: #555;
         }
         nav a {
             margin-left: 20px;
@@ -74,14 +56,9 @@
 </head>
 <body>
     <header>
-        <div class="logo-title">
-            <!-- Replace the src with your logo path if different -->
-            <img src="images/logo.png" alt="Muna Clinic Logo">
-            <div class="site-name">
-                Dr. Abhigya Parajuli
-                <small>Muna Clinic Pvt. Ltd.</small>
-            </div>
-        </div>
+        <a href="index.html">
+            <img src="images/logo.png" alt="Muna Clinic Logo" class="logo">
+        </a>
         <nav>
             <a href="index.html">Home</a>
             <a href="about.html">About</a>
@@ -94,7 +71,7 @@
     </header>
 
     <main>
-        <!-- Optional profile photo -->
+        <!-- Optional profile photo: uncomment and add your image file -->
         <!-- <img src="images/profile.jpg" alt="Dr. Abhigya Parajuli" class="profile"> -->
 
         <h1>Hi, I’m Dr. Abhigya Parajuli — but you can call me Muna.</h1>
