@@ -4,12 +4,24 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Muna Clinic</title>
+    <meta name="description" content="Muna Clinic – Official website of Dr. Abhigya Parajuli, MD resident in General Practice & Emergency Medicine and founder of a future appointment-based clinic in Pokhara. Read clinical insights, research, and more.">
+    <!-- Open Graph / Social sharing -->
+    <meta property="og:title" content="Muna Clinic">
+    <meta property="og:description" content="Personal website of Dr. Abhigya Parajuli – MD resident, researcher, and founder of Muna Clinic, Pokhara.">
+    <meta property="og:image" content="https://munaclinic.com/images/logo.png">
+    <meta property="og:url" content="https://munaclinic.com">
+    <meta name="twitter:card" content="summary">
+    <!-- Favicon -->
     <link rel="icon" type="image/png" sizes="64x64" href="images/favicon.png">
+    <!-- Google Font -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Belleza&display=swap" rel="stylesheet">
     <style>
-        html { font-size: 20px; }
+        html {
+            font-size: 20px;
+            scroll-behavior: smooth;
+        }
         body {
             font-family: 'Belleza', sans-serif;
             max-width: 850px;
@@ -17,6 +29,7 @@
             padding: 0 20px;
             line-height: 1.7;
             color: #5c815b;
+            background-color: #f7faf5;
         }
         header {
             display: flex;
@@ -26,17 +39,34 @@
             border-bottom: 1px solid #e0e0e0;
             margin-bottom: 30px;
         }
-        .logo-container { margin-bottom: 20px; }
-        .logo { height: 110px; width: auto; max-height: 130px; }
-        nav { text-align: center; position: relative; }
+        .logo-container {
+            margin-bottom: 20px;
+        }
+        .logo {
+            height: 110px;
+            width: auto;
+            max-height: 130px;
+        }
+        nav {
+            text-align: center;
+            position: relative;
+        }
         nav a {
             margin: 0 15px;
             text-decoration: none;
             color: #5c815b;
             font-weight: 500;
             font-family: 'Belleza', sans-serif;
+            transition: all 0.2s ease;
         }
-        nav a:hover { text-decoration: underline; }
+        nav a:hover {
+            text-decoration: underline;
+            transform: translateY(-1px);
+        }
+        nav a.active {
+            font-weight: bold;
+            text-decoration: underline;
+        }
         .menu-toggle {
             display: none;
             background: none;
@@ -49,12 +79,52 @@
             line-height: 1;
         }
         @media (max-width: 768px) {
-            .menu-toggle { display: block; }
-            nav .nav-links { display: none; flex-direction: column; width: 100%; margin-top: 10px; }
-            nav .nav-links.active { display: flex; }
-            nav a { display: block; margin: 10px 0; font-size: 1.1rem; }
+            .menu-toggle {
+                display: block;
+            }
+            nav .nav-links {
+                display: none;
+                flex-direction: column;
+                width: 100%;
+                margin-top: 10px;
+            }
+            nav .nav-links.active {
+                display: flex;
+            }
+            nav a {
+                display: block;
+                margin: 10px 0;
+                font-size: 1.1rem;
+            }
         }
-        h1 { font-family: 'Belleza', sans-serif; color: #5c815b; font-size: 2rem; margin-top: 0; }
+        h1 {
+            font-family: 'Belleza', sans-serif;
+            color: #5c815b;
+            font-size: 2.5rem;
+            margin-top: 0;
+            line-height: 1.3;
+        }
+        h2 {
+            font-family: 'Belleza', sans-serif;
+            color: #5c815b;
+            font-size: 1.75rem;
+            margin-top: 2rem;
+        }
+        .latest-post {
+            background: #fff;
+            border-radius: 12px;
+            box-shadow: 0 2px 8px rgba(92,129,91,0.1);
+            padding: 25px;
+            margin-top: 30px;
+        }
+        .latest-post h3 {
+            margin-top: 0;
+            color: #5c815b;
+        }
+        .latest-post a {
+            color: #5c815b;
+            text-decoration: underline;
+        }
         footer {
             margin-top: 40px;
             padding: 20px 0;
@@ -64,17 +134,38 @@
             color: #5c815b;
             font-family: 'Belleza', sans-serif;
         }
+        /* Back-to-top button */
+        #backToTop {
+            display: none;
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            background: #5c815b;
+            color: #fff;
+            border: none;
+            border-radius: 50%;
+            width: 45px;
+            height: 45px;
+            font-size: 1.5rem;
+            cursor: pointer;
+            box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+            z-index: 999;
+            font-family: 'Belleza', sans-serif;
+            line-height: 1;
+        }
     </style>
 </head>
 <body>
     <header>
         <div class="logo-container">
-            <a href="index.html"><img src="images/logo.png" alt="Muna Clinic Logo" class="logo"></a>
+            <a href="index.html">
+                <img src="images/logo.png" alt="Muna Clinic Logo" class="logo" loading="lazy">
+            </a>
         </div>
         <nav>
             <button class="menu-toggle" onclick="toggleMenu()">+</button>
             <div class="nav-links" id="navLinks">
-                <a href="index.html">Home</a>
+                <a href="index.html" class="active">Home</a>
                 <a href="doctor.html">Doctor</a>
                 <a href="clinic.html">Clinic</a>
                 <a href="research.html">Research</a>
@@ -89,11 +180,22 @@
         <p>I’m an MD resident in General Practice &amp; Emergency Medicine at BP Koirala Institute of Health Sciences, and the founder of <strong>Muna Clinic Private Limited</strong> in Pokhara.</p>
         <p>This website is my corner of the internet where I share my journey, clinical insights, and the vision behind Muna Clinic. Right now, while I train, the clinic serves as a side project — a place to write, think out loud, and explore ideas about emergency care, primary medicine, and healthcare in Nepal. After residency, it will become an appointment-based practice and a home for community-focused emergency and primary care.</p>
         <p>Thanks for stopping by. Whether you're a patient, a fellow clinician, or someone curious about medicine, I'm glad you're here.</p>
+
+        <!-- Latest Blog Post teaser -->
+        <h2>Latest Blog Post</h2>
+        <div class="latest-post">
+            <h3>Beyond the Checklist: The Hidden Symphony of Enhanced Recovery After Surgery</h3>
+            <p>In 1997, a Danish surgeon named Henrik Kehlet dared to challenge a dogma so entrenched it was almost invisible: that major surgery had to mean weeks of immobility, pain, and metabolic chaos…</p>
+            <p style="text-align:right;"><a href="blog.html">Read more →</a></p>
+        </div>
     </main>
 
     <footer>
         <p>&copy; 2026 Muna Clinic Private Limited</p>
     </footer>
+
+    <!-- Back-to-top button -->
+    <button id="backToTop" onclick="window.scrollTo({top:0,behavior:'smooth'})">↑</button>
 
     <script>
         function toggleMenu() {
@@ -102,6 +204,16 @@
             var btn = document.querySelector(".menu-toggle");
             btn.textContent = nav.classList.contains("active") ? "✕" : "+";
         }
+
+        // Show/hide back-to-top button
+        window.onscroll = function() {
+            var btn = document.getElementById('backToTop');
+            if (document.body.scrollTop > 500 || document.documentElement.scrollTop > 500) {
+                btn.style.display = 'block';
+            } else {
+                btn.style.display = 'none';
+            }
+        };
     </script>
 </body>
 </html>
