@@ -102,24 +102,27 @@
             font-size: 2.5rem;
             line-height: 1.3;
             margin-top: 0;
+            clear: both;
         }
         h2 {
             font-size: 1.5rem;
             margin-top: 2rem;
             border-bottom: 1px solid #ddd;
             padding-bottom: 5px;
+            clear: both;
         }
         ul {
             padding-left: 20px;
         }
         .profile-pic {
-            display: block;
-            margin: 0 auto 20px;
+            float: left;
+            margin: 0 25px 15px 0;
             width: 200px;
             height: 200px;
             border-radius: 50%;
             object-fit: cover;
             box-shadow: 0 4px 12px rgba(92,129,91,0.15);
+            shape-outside: circle(50%);
         }
         footer {
             margin-top: 40px;
@@ -129,6 +132,7 @@
             font-size: 0.9em;
             color: #5c815b;
             font-family: 'Belleza', sans-serif;
+            clear: both;
         }
         #backToTop {
             display: none;
@@ -147,6 +151,13 @@
             z-index: 999;
             font-family: 'Belleza', sans-serif;
             line-height: 1;
+        }
+        @media (max-width: 600px) {
+            .profile-pic {
+                float: none;
+                display: block;
+                margin: 0 auto 20px;
+            }
         }
     </style>
 </head>
@@ -173,13 +184,13 @@
     <main>
         <h1>Dr. Abhigya Parajuli</h1>
 
-        <!-- Profile photo – replace src with your image file path if different -->
+        <!-- Profile photo – replace src with your own file if needed -->
         <img src="images/profile.jpg" alt="Dr. Abhigya Parajuli" class="profile-pic" loading="lazy">
 
-        <p>I've been called “Muna” since I can remember — a nickname my family gave me in childhood that somehow never left. It’s a name that reminds me where I come from, and it’s the name I chose for the clinic that will one day be my professional home.</p>
+        <p>I’ve been called “Muna” since I can remember — a nickname my family gave me in childhood that somehow never left. It’s a name that reminds me where I come from, and it’s the name I chose for the clinic that will one day be my professional home.</p>
         <p>I completed my MBBS at Gandaki Medical College, Pokhara, graduating with first division and completing a one-year rotating internship across General Surgery, Neurosurgery, Internal Medicine, Emergency, Obstetrics &amp; Gynaecology, Paediatrics, and Orthopaedics. During that year, I learned to suture, place catheters and NG tubes, assist in major surgeries, and — more importantly — to stay calm and think clearly when minutes matter.</p>
         <p>That pull toward acute care led me to pursue an <strong>MD in General Practice &amp; Emergency Medicine at BP Koirala Institute of Health Sciences</strong>, which I began in March 2026. Emergency medicine, to me, is the intersection of skill and empathy: knowing what to do and being present for the person in front of you.</p>
-        <p>Beyond the wards, I've developed a love for research and academic writing. I served as an editorial assistant for the Journal of Gandaki Medical College, published on medical education during COVID-19, and have a manuscript under review on a rare surgical presentation. I’ve also been involved in health camps, global health volunteering, and organizing medical webinars — activities that keep me connected to the bigger picture of public health.</p>
+        <p>Beyond the wards, I’ve developed a love for research and academic writing. I served as an editorial assistant for the Journal of Gandaki Medical College, published on medical education during COVID-19, and have a manuscript under review on a rare surgical presentation. I’ve also been involved in health camps, global health volunteering, and organizing medical webinars — activities that keep me connected to the bigger picture of public health.</p>
         <p>Outside medicine, I’m a believer in community, clear communication, and the power of a simple explanation. That’s what this website is about, and what Muna Clinic will stand for.</p>
 
         <h2>Current Position</h2>
