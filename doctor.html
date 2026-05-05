@@ -31,12 +31,13 @@
             margin-bottom: 20px;
         }
         .logo {
-            height: 100px;
+            height: 110px;          /* slightly increased */
             width: auto;
-            max-height: 120px;
+            max-height: 130px;
         }
         nav {
             text-align: center;
+            position: relative;
         }
         nav a {
             margin: 0 15px;
@@ -48,6 +49,39 @@
         nav a:hover {
             text-decoration: underline;
         }
+
+        /* Hamburger button (hidden on desktop) */
+        .menu-toggle {
+            display: none;
+            background: none;
+            border: none;
+            font-size: 2rem;
+            cursor: pointer;
+            color: #5c815b;
+            font-family: 'Belleza', sans-serif;
+            padding: 0 10px;
+        }
+
+        @media (max-width: 768px) {
+            .menu-toggle {
+                display: block;       /* visible on tablet/mobile */
+            }
+            nav .nav-links {
+                display: none;        /* hide links by default */
+                flex-direction: column;
+                width: 100%;
+                margin-top: 10px;
+            }
+            nav .nav-links.active {
+                display: flex;        /* show when toggled */
+            }
+            nav a {
+                display: block;
+                margin: 10px 0;
+                font-size: 1.1rem;
+            }
+        }
+
         h1, h2 {
             font-family: 'Belleza', sans-serif;
             color: #5c815b;
@@ -64,12 +98,6 @@
             color: #5c815b;
             font-family: 'Belleza', sans-serif;
         }
-        @media (max-width: 600px) {
-            nav a {
-                display: block;
-                margin: 5px 0;
-            }
-        }
     </style>
 </head>
 <body>
@@ -80,26 +108,27 @@
             </a>
         </div>
         <nav>
-            <a href="index.html">Home</a>
-            <a href="doctor.html">Doctor</a>
-            <a href="clinic.html">Clinic</a>
-            <a href="research.html">Research</a>
-            <a href="blog.html">Blog</a>
-            <a href="contact.html">Contact</a>
+            <button class="menu-toggle" onclick="toggleMenu()">☰</button>
+            <div class="nav-links" id="navLinks">
+                <a href="index.html">Home</a>
+                <a href="doctor.html">Doctor</a>
+                <a href="clinic.html">Clinic</a>
+                <a href="research.html">Research</a>
+                <a href="blog.html">Blog</a>
+                <a href="contact.html">Contact</a>
+            </div>
         </nav>
     </header>
 
     <main>
         <h1>Dr. Abhigya Parajuli</h1>
 
-        <!-- About / Personal Story -->
         <p>I’ve been called “Muna” since I can remember — a nickname my family gave me in childhood that somehow never left. It’s a name that reminds me where I come from, and it’s the name I chose for the clinic that will one day be my professional home.</p>
         <p>I completed my MBBS at Gandaki Medical College, Pokhara, graduating with first division and completing a one-year rotating internship across General Surgery, Neurosurgery, Internal Medicine, Emergency, Obstetrics &amp; Gynaecology, Paediatrics, and Orthopaedics. During that year, I learned to suture, place catheters and NG tubes, assist in major surgeries, and — more importantly — to stay calm and think clearly when minutes matter.</p>
         <p>That pull toward acute care led me to pursue an <strong>MD in General Practice &amp; Emergency Medicine at BP Koirala Institute of Health Sciences</strong>, which I began in March 2026. Emergency medicine, to me, is the intersection of skill and empathy: knowing what to do and being present for the person in front of you.</p>
         <p>Beyond the wards, I’ve developed a love for research and academic writing. I served as an editorial assistant for the Journal of Gandaki Medical College, published on medical education during COVID-19, and have a manuscript under review on a rare surgical presentation. I’ve also been involved in health camps, global health volunteering, and organizing medical webinars — activities that keep me connected to the bigger picture of public health.</p>
         <p>Outside medicine, I’m a believer in community, clear communication, and the power of a simple explanation. That’s what this website is about, and what Muna Clinic will stand for.</p>
 
-        <!-- Professional Background sections -->
         <h2>Current Position</h2>
         <ul>
             <li><strong>MD Resident</strong>, General Practice &amp; Emergency Medicine, BP Koirala Institute of Health Sciences (March 2026 – present)</li>
@@ -142,5 +171,11 @@
     <footer>
         <p>&copy; 2026 Dr. Abhigya Parajuli &amp; Muna Clinic Pvt. Ltd.</p>
     </footer>
+
+    <script>
+        function toggleMenu() {
+            document.getElementById("navLinks").classList.toggle("active");
+        }
+    </script>
 </body>
 </html>
